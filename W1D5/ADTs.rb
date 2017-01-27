@@ -1,4 +1,5 @@
 class Stack
+  attr_reader :stack
   def initialize
     @stack = []
   end
@@ -12,8 +13,27 @@ class Stack
   end
 
   def show
-    @stack.dup
+    stack.dup
   end
 end
 
-cle
+class Queue
+  attr_reader :queue
+
+  def initialize
+    @queue = []
+  end
+
+  def enqueue(el)
+    @queue.push(el)
+  end
+
+  def dequeue
+    @queue.shift
+  end
+
+  def show
+    queue.dup
+  end
+
+end
