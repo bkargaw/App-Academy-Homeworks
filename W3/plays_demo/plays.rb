@@ -34,15 +34,15 @@ class Play
 
   #(returns all plays written by playwright)
   def self.find_by_playwright(name)
-    
-    data = PlayDBConnection.instance.execute(<<-SQL, name)
+    playwright = Playwright.find_by_name(name)
+    raise "#{name} is not in the database" unless playwright
+    data = PlayDBConnection.instance.execute(<<-SQL, playwright.id)
             SELECT
-              plays.title
+              *
             FROM
               plays
-            INNER JOIN  playwright on plays.playwright_id = playwright.id
             WHERE
-              playwright.name Like ?
+              playwright_id = ?
           SQL
     data
   end
@@ -95,7 +95,10 @@ class Playwright
       WHERE
         playwright.name Like ?
     SQL
-    data
+
+    return nil unless data
+
+    Playwright.new(data.first)
   end
 
   def initialize(options)
