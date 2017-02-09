@@ -20,11 +20,11 @@ class House < ActiveRecord::Base
     source: :plants
   )
 
-  has_many(
-    :seeds,
-    through: :plants,
-    source: :seeds
-  )
+  # has_many(
+  #   :seeds,
+  #   through: :plants,
+  #   source: :seeds
+  # )
 
   def n_plus_one_seeds
     plants = self.plants

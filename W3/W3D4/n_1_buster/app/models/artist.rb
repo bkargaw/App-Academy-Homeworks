@@ -16,9 +16,9 @@ class Artist < ActiveRecord::Base
     primary_key: :id
   )
 
-  has_many :tracks,
-    :through => :albums,
-    :source => :tracks
+  # has_many :tracks,
+  #   :through => :albums,
+  #   :source => :tracks
 
   def n_plus_one_tracks
     albums = self.albums
@@ -31,11 +31,18 @@ class Artist < ActiveRecord::Base
   end
 
   def better_tracks_query
-    albums = self.albums.includes(:tracks)
+    albums = self.albums
+            .select("albums.*, COUNT(*) AS tracks_count")
+            .joins(:tracks)
+            .group("albums.id")
     tracks_count = {}
     albums.each do |album|
-      tracks_count[album.title] = album.tracks.length
+    tracks_count[album.title] = album.tracks_count
     end
+    # .select("albums.*, COUNT(*) AS tracks_count")
+    # .join(:tracks)
+    # .group("albums.id")
+
 
     tracks_count
   end
