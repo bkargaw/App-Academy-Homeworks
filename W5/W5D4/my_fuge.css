@@ -1,0 +1,20 @@
+body{
+  font-family: "Arial, sans-serif";
+  background: lavender;
+}
+
+h1 {
+  fond-size: 38px;
+}
+
+h2 {
+  fond-size: 32px;
+}
+
+.ingredients-list{
+  list-style: square inside;
+}
+
+.directions_list{
+list-style-type: upper-roman;
+}
