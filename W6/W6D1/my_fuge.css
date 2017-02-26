@@ -1,0 +1,64 @@
+/*
+
+-  Style the radio buttons with stars! Use the stars.png file in the assets folder.
+*/
+
+body{
+  font-family: "Arial, sans-serif";
+  background: lavender;
+  padding: 2em;
+  border: 2em;
+}
+html, header, nav, aside, section, h1, h2,h3, li, ul, ol, p, form {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+ol > li:nth-of-type(2n) {
+    background-color: whitesmoke;
+}
+
+input[type="radio"],select ,input[type="submit"] {
+  cursor: pointer;
+  outline: none;
+}
+input[type="radio"] {
+    -webkit-appearance: none;
+    width: 27px;
+    height: 27px;
+    background-image: url(./stars.png);
+    vertical-align: bottom;
+}
+/*input[type="radio"] {
+    -webkit-appearance: none;
+    width: 27px;
+    height: 27px;
+    background-image: url(../assets/stars.png);
+    vertical-align: bottom;
+}*/
+
+input:last-child:hover {
+  -webkit-filter: brightness(80%);
+}
+
+input:last-child {
+  background-color: gold;
+}
+
+
+h1 {
+  fond-size: 38px;
+}
+
+h2 {
+  fond-size: 32px;
+}
+
+.ingredients-list{
+  list-style: square inside;
+}
+
+.directions_list{
+list-style-type: upper-roman;
+}
