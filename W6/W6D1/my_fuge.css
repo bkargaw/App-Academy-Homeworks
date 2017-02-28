@@ -2,6 +2,26 @@
 
 -  Style the radio buttons with stars! Use the stars.png file in the assets folder.
 */
+/*
+-Make our list elements in the nav menu into inline-block elements.
+-Give the links in those list elements a padding on all sides of 20px
+ and change their display property to correct their inherent behavior.
+-Pick the correct display property to position the nav next to the logo.
+-Set our main content region by giving the body a width of 900px.
+-Use the classic centering trick margin: 0 auto to center the body.
+-Give the main section a 700px width and the aside a width of 180px.
+-Apply a display property to position the aside and section next to each
+other. Space them out with a 15px margin-right on the aside.
+-If you find your ingredients list aligned to the bottom use the developer
+tools to find and correct the styling.
+-Space out the list elements in the ingredients list with a top and bottom
+margin of 15px.
+-Space out the directions the same way.
+-Use the display property to put input elements on their own row. At this
+ point it probably looks better to remove the "Cooking Expertise" and "Rating" labels.
+-Space out the select element with margin and assign widths to the text input,
+select, and textarea to finish up our form.
+*/
 
 body{
   font-family: "Arial, sans-serif";
@@ -30,13 +50,7 @@ input[type="radio"] {
     background-image: url(./stars.png);
     vertical-align: bottom;
 }
-/*input[type="radio"] {
-    -webkit-appearance: none;
-    width: 27px;
-    height: 27px;
-    background-image: url(../assets/stars.png);
-    vertical-align: bottom;
-}*/
+
 
 input:last-child:hover {
   -webkit-filter: brightness(80%);
